@@ -9,12 +9,10 @@ const Showcase = () => {
           Producers Connect
         </h2>
 
-        {/* Description */}
         <p className='text-whote text-center max-w-2xl mx-auto mb-8 text-gray-300'>
           Invest Smart And Wiser Everywhere.
         </p>
 
-        {/* Buttons */}
         <div className='space-x-4'>
           <button className='bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-700 transition duration-300'>
             Discover & Invest

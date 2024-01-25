@@ -8,7 +8,6 @@ export default function Home() {
     <div>
       <Showcase />
       <Features />
-      <Footer />
     </div>
   );
 }

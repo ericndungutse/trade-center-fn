@@ -13,10 +13,6 @@
   transition: background-color 0.3s, border 0.3s;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   font-family: sans-serif;
   color: #374151;
@@ -24,10 +20,6 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
-}
-.active {
-  background-color: #fff;
-  color: #374151;
 }
 
 .showcase {
