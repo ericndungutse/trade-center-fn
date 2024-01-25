@@ -39,7 +39,7 @@ const SignInForm = () => {
       <div className='flex justify-between mb-8'>
         <p className='text-gray-600'>
           Don't have an account?{' '}
-          <Link to='signup' className='text-blue-500 hover:underline'>
+          <Link to='/signup' className='text-blue-500 hover:underline'>
             Sign Up
           </Link>
         </p>
@@ -51,7 +51,7 @@ const SignInForm = () => {
 
       <button
         type='submit'
-        className='bg-purple-600 w-full text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-700'
+        className='bg-blue-500 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700'
       >
         Sign In
       </button>
