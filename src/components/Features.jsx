@@ -3,7 +3,7 @@ import React from 'react';
 
 const Features = () => {
   return (
-    <section className='bg-white py-16'>
+    <section className='bg-white py-16 px-12'>
       <div className='container mx-auto text-center'>
         <h2 className='text-3xl font-bold text-purple-800 mb-8'>Features</h2>
 

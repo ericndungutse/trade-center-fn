@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className='bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 text-white p-4'>
+    <header className='bg-gradient-to-r py-8 from-purple-700 via-purple-600 to-purple-700 text-white p-4'>
       <div className='container mx-auto flex justify-between items-center'>
         {/* Logo */}
         <div className='flex items-center'>
