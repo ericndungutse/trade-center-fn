@@ -32,3 +32,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.app-layout {
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: auto 1fr;
+}
