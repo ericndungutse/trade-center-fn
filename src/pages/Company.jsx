@@ -70,7 +70,7 @@ const CompanyDetail = () => {
   }
 
   return (
-    <div className='container px-12 py-5'>
+    <div className='container py-5'>
       <h2 className='text-3xl font-bold text-blue-800 mb-6'>
         {selectedCompany.name}
       </h2>

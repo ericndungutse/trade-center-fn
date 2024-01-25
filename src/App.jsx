@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Companies from './pages/Companies';
 import Company from './pages/Company';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/signin' element={<SignIn />} />
             <Route path='/companies' element={<Companies />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/companies/:companyId' element={<Company />} />
           </Routes>
         </div>
