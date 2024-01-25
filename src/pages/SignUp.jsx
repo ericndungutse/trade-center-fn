@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function SignUp() {
   return (
     <div className='flex items-start h-full justify-center py-10'>
-      <div className='bg-white p-6 rounded-md shadow-md max-w-md w-full'>
+      <div className='bg-white p-6 rounded-md shadow-md max-w-md h-full w-full'>
         <h2 className='text-4xl font-bold text-center mb-8'>Sign Up</h2>
         <div className='bg-blue-50 border-l-4 border-blue-500 p-4 mb-4'>
           <p className='text-blue-800'>
