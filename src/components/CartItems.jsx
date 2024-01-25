@@ -11,7 +11,7 @@ const CartItems = () => {
   ];
   return (
     <div className='container mx-auto mt-8'>
-      <h2 className='text-3xl font-bold text-purple-800 mb-6'>Shopping Cart</h2>
+      <h2 className='text-3xl font-bold text-blue-800 mb-6'>Shopping Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
@@ -31,7 +31,7 @@ const CartItems = () => {
           ))}
           <div className='flex justify-between items-center'>
             <p className='text-lg font-bold'>Total: $123.45</p>
-            <button className='bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-700'>
+            <button className=' text-white py-2 bg-yellow-500 px-4 rounded hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-700'>
               Checkout
             </button>
           </div>
