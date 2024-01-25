@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import RegisterCompany from './pages/RegisterCompany';
 import SignUp from './pages/SignUp';
@@ -7,6 +7,7 @@ import Companies from './pages/Companies';
 import Company from './pages/Company';
 import Cart from './pages/Cart';
 import User from './pages/User';
+import Product from './pages/Product';
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
         <Route path='/companies' element={<Companies />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/companies/:companyId' element={<Company />} />
-        <Route path='/user' element={<User />} />
+        <Route path='/user' element={<User />}>
+          <Route index element={<Navigate replace to='products' />} />
+          <Route path='products' element={<Product />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
