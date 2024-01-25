@@ -26,7 +26,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to='/signup'
-            className='hover:text-gray-300 transition duration-300'
+            className='bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-purple-600 transition hover:text-white'
           >
             Sign Up
           </NavLink>

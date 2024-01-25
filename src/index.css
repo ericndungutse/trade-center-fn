@@ -25,3 +25,19 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
 }
+.active {
+  background-color: #fff;
+  color: #374151;
+}
+
+.showcase {
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(0, 0, 0, 0.5),
+      rgb(0, 0, 0, 0.7)
+    ),
+    url('/images/showcase.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
