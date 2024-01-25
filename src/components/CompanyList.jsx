@@ -41,7 +41,7 @@ const CompanyList = () => {
           </div>
           <h3 className='text-xl font-bold mb-2'>{company.name}</h3>
           <p className='text-gray-600 mb-2'>{company.location}</p>
-          <p className='bg-blue-100 mb-6 w-fit text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300'>
+          <p className='bg-blue-100 mb-6 w-fit text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded '>
             {company.industry}
           </p>
 
