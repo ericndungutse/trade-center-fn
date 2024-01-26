@@ -1,5 +1,6 @@
 // src/components/Showcase.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Showcase = () => {
   return (
@@ -14,9 +15,12 @@ const Showcase = () => {
         </p>
 
         <div className='space-x-4'>
-          <button className='bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700 transition duration-300'>
+          <Link
+            to='/companies'
+            className='bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700 transition duration-300'
+          >
             Discover & Invest
-          </button>
+          </Link>
         </div>
       </div>
     </section>
