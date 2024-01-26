@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useCompanies } from '../context/CompaniesCOnetext';
 
 const CompanyList = () => {
-  const [companies, setCompanies] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { companies, onFetchedCompanies, loading, onLoading } = useCompanies();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-
       try {
-        setLoading(true);
+        onLoading(true);
         const response = await axios.get(
           'http://localhost:3000/api/v1/companies'
         );
 
-        setCompanies(response.data.data.companies);
+        onFetchedCompanies(response.data.data.companies);
       } catch (error) {
         console.log(error);
       } finally {
-        setLoading(false);
+        onLoading(false);
       }
     };
 
@@ -42,13 +43,14 @@ const CompanyList = () => {
               />
             </div>
             <h3 className='text-xl font-bold mb-2'>{company.name}</h3>
-            {/* <p className='text-gray-600 mb-2'>{company.location}</p> */}
-            <p className='bg-blue-100 mb-6 w-fit text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded '>
-              {company.industry}
-            </p>
 
             <div className='absolute bottom-0 left-0 right-0 bg-blue-600 text-white py-2 text-center'>
-              <button className='cursor-pointer focus:outline-none'>
+              <button
+                onClick={() => {
+                  navigate('/');
+                }}
+                className='cursor-pointer focus:outline-none'
+              >
                 <span className='inline-block transform -translate-y-1'>+</span>{' '}
                 Explore Details
               </button>

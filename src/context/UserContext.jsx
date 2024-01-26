@@ -5,16 +5,6 @@ const UserContext = createContext();
 function UserProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  // // Change Value in local storage when value changes
-  // // Similar to use an event handler
-  // Change this componet's state and synchronizes it with local storage
-  // useEffect(
-  //   function () {
-  //     localStorage.setItem(key, JSON.stringify(value));
-  //   },
-  //   [value, key]
-  // );
-
   function onLogin(userData) {
     setUser(userData);
   }
