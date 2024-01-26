@@ -1,12 +1,14 @@
 // src/components/SignIn.js
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useUser } from '../context/UserContext';
 
 const SignInForm = () => {
   const [email, setEmail] = useState('dav.ndungutse@gmail.com');
   const [password, setPassword] = useState('12345678');
   const [error, setError] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const { onLogin } = useUser();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,13 +19,17 @@ const SignInForm = () => {
       setError('');
       const credentials = { email, password };
       const res = await axios.post(
-        'https://trade-center.onrender.com/api/v1/auth/sign-in',
+        'http://localhost:3000/api/v1/auth/sign-in',
         {
           ...credentials,
         }
       );
 
       const data = res.data;
+      onLogin({
+        ...data.data,
+        token: data.token,
+      });
       console.log(data);
     } catch (error) {
       setError(error.response.data.message);

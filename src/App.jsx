@@ -8,6 +8,7 @@ import Company from './pages/Company';
 import Cart from './pages/Cart';
 import User from './pages/User';
 import Product from './pages/Product';
+import Redirect from './components/Redirect';
 
 function App() {
   return (
@@ -16,7 +17,14 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/register-company' element={<RegisterCompany />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/signin' element={<SignIn />} />
+        <Route
+          path='/signin'
+          element={
+            <Redirect>
+              <SignIn />
+            </Redirect>
+          }
+        />
         <Route path='/companies' element={<Companies />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/companies/:companyId' element={<Company />} />
