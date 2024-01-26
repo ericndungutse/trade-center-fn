@@ -1,10 +1,44 @@
 // src/components/SignIn.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 const SignInForm = () => {
+  const [email, setEmail] = useState('dav.ndungutse@gmail.com');
+  const [password, setPassword] = useState('12345678');
+  const [error, setError] = useState('');
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!email || !password) return;
+    setIsLoggingIn(true);
+
+    try {
+      setError('');
+      const credentials = { email, password };
+      const res = await axios.post(
+        'https://trade-center.onrender.com/api/v1/auth/sign-in',
+        {
+          ...credentials,
+        }
+      );
+
+      const data = res.data;
+      console.log(data);
+    } catch (error) {
+      setError(error.response.data.message);
+    } finally {
+      setIsLoggingIn(false);
+    }
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
+      {error && (
+        <div className='bg-red-200 border-l-4 border-red-700 p-4 mb-4'>
+          <p className='text-red-900'>{error}</p>
+        </div>
+      )}
+
       <div className='mb-4'>
         <label
           htmlFor='email'
@@ -17,6 +51,9 @@ const SignInForm = () => {
           id='email'
           name='email'
           className='mt-1 p-2 w-full border rounded-md'
+          value={email}
+          disabled={isLoggingIn}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder='Enter your email'
         />
       </div>
@@ -32,6 +69,10 @@ const SignInForm = () => {
           id='password'
           name='password'
           className='mt-1 p-2 w-full border rounded-md'
+          autoComplete='current-password'
+          value={password}
+          disabled={isLoggingIn}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder='Enter your password'
         />
       </div>
@@ -39,21 +80,20 @@ const SignInForm = () => {
       <div className='flex justify-between mb-8'>
         <p className='text-gray-600'>
           Don't have an account?{' '}
-          <Link to='/signup' className='text-blue-500 hover:underline'>
-            Sign Up
-          </Link>
+          <button className='text-blue-500 hover:underline'>Sign Up</button>
         </p>
 
-        <a href='#' className='text-blue-500 hover:underline'>
+        <button className='text-blue-500 hover:underline'>
           Forgot Password?
-        </a>
+        </button>
       </div>
 
       <button
         type='submit'
-        className='bg-blue-500 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700'
+        disabled={isLoggingIn}
+        className='bg-blue-500 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700 disabled:opacity-40'
       >
-        Sign In
+        {!isLoggingIn ? 'Log in' : 'Wait...'}
       </button>
     </form>
   );
