@@ -3,7 +3,7 @@ import React from 'react';
 
 const Showcase = () => {
   return (
-    <section className='bg-cover bg-center showcase h-[80vh] flex justify-center items-center'>
+    <section className='bg-cover bg-center showcase h-[80vh] flex justify-center text-sm items-center'>
       <div className='container mx-auto text-center'>
         <h2 className='font-bold mb-1 text-white tracking-widest text-4xl uppercase'>
           Producers Connect

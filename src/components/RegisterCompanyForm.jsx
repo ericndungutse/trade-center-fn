@@ -21,7 +21,7 @@ const RegisterCompanyForm = () => {
           type='text'
           id='companyName'
           name='companyName'
-          className='mt-1 p-2 w-full border rounded-md'
+          className='mt-1 p-2 w-full border  text-sm rounded-md'
           placeholder='Enter company name'
           required
         />
@@ -37,7 +37,7 @@ const RegisterCompanyForm = () => {
           type='email'
           id='companyEmail'
           name='companyEmail'
-          className='mt-1 p-2 w-full border rounded-md'
+          className='mt-1 p-2 w-full border  text-sm rounded-md'
           placeholder='Enter company email'
           required
         />

@@ -74,7 +74,7 @@ const CompanyDetail = () => {
   return (
     <PageLaout>
       <Container>
-        <div className='container py-5'>
+        <div className='container py-5 text-sm'>
           <h2 className='text-3xl font-bold text-blue-800 mb-6'>
             {selectedCompany.name}
           </h2>
@@ -123,19 +123,19 @@ const CompanyDetail = () => {
                     <div className='flex items-center'>
                       <button
                         onClick={() => handleDecrement(product.id)}
-                        className='bg-blue-600 text-white py-1 px-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-700'
+                        className='bg-blue-600 text-sm  text-white py-1 px-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-700'
                       >
                         -
                       </button>
                       <input
                         type='number'
                         value={quantities[product.id] || 0}
-                        className='mx-2 w-12 text-center'
+                        className='mx-2 w-12  text-sm text-center'
                         readOnly
                       />
                       <button
                         onClick={() => handleIncrement(product.id)}
-                        className='bg-blue-600 text-white py-1 px-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-700'
+                        className='bg-blue-600 text-sm  text-white py-1 px-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-700'
                       >
                         +
                       </button>

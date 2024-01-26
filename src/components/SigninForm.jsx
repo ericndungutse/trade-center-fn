@@ -38,7 +38,7 @@ const SignInForm = () => {
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='text-sm'>
       {error && (
         <div className='bg-red-200 border-l-4 border-red-700 p-4 mb-4'>
           <p className='text-red-900'>{error}</p>
@@ -46,10 +46,7 @@ const SignInForm = () => {
       )}
 
       <div className='mb-4'>
-        <label
-          htmlFor='email'
-          className='block text-sm font-medium text-gray-600'
-        >
+        <label htmlFor='email' className='block font-medium text-gray-600'>
           Email
         </label>
         <input
@@ -64,17 +61,14 @@ const SignInForm = () => {
         />
       </div>
       <div className='mb-1'>
-        <label
-          htmlFor='password'
-          className='block text-sm font-medium text-gray-600'
-        >
+        <label htmlFor='password' className='block font-medium text-gray-600'>
           Password
         </label>
         <input
           type='password'
           id='password'
           name='password'
-          className='mt-1 p-2 w-full border rounded-md'
+          className='mt-1 p-2 w-full border text-sm rounded-md'
           autoComplete='current-password'
           value={password}
           disabled={isLoggingIn}
@@ -84,12 +78,14 @@ const SignInForm = () => {
       </div>
 
       <div className='flex justify-between mb-8'>
-        <p className='text-gray-600'>
+        <p className='text-gray-600 text-xs '>
           Don't have an account?{' '}
-          <button className='text-blue-500 hover:underline'>Sign Up</button>
+          <button className='text-blue-500 hover:underline text-xs '>
+            Sign Up
+          </button>
         </p>
 
-        <button className='text-blue-500 hover:underline'>
+        <button className='text-blue-500 hover:underline text-xs '>
           Forgot Password?
         </button>
       </div>
@@ -97,7 +93,7 @@ const SignInForm = () => {
       <button
         type='submit'
         disabled={isLoggingIn}
-        className='bg-blue-500 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700 disabled:opacity-40'
+        className='bg-blue-500 w-full text-sm text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-purple-700 disabled:opacity-40'
       >
         {!isLoggingIn ? 'Log in' : 'Wait...'}
       </button>

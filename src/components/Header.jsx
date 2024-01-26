@@ -7,7 +7,7 @@ import { useUser } from '../context/UserContext';
 const Header = () => {
   const { user, onLogout } = useUser();
   return (
-    <header className='bg-gradient-to-r py-2 from-blue-700 via-blue-600 to-blue-700 text-white'>
+    <header className='bg-gradient-to-r py-2 from-blue-700 via-blue-600 to-blue-700 text-white text-xs'>
       <Container>
         <div className='flex items-center h-full'>
           <div className='container mx-auto flex justify-between items-center'>
