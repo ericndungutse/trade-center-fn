@@ -4,6 +4,7 @@ const CompanyContext = createContext();
 
 function CompaniesProvider({ children }) {
   const [companies, setCompanies] = useState([]);
+  const [company, setCompany] = useState(null);
   const [loading, setLoading] = useState(true);
 
   function onFetchedCompanies(companies) {
@@ -14,9 +15,21 @@ function CompaniesProvider({ children }) {
     setLoading(loading);
   }
 
+  function onSelectCompany(id) {
+    const company = companies.find((company) => company.id === id);
+    setCompany(company);
+  }
+
   return (
     <CompanyContext.Provider
-      value={{ onFetchedCompanies, companies, onLoading, loading }}
+      value={{
+        onFetchedCompanies,
+        companies,
+        onLoading,
+        loading,
+        company,
+        onSelectCompany,
+      }}
     >
       {children}
     </CompanyContext.Provider>

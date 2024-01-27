@@ -19,7 +19,7 @@ const SignInForm = () => {
       setError('');
       const credentials = { email, password };
       const res = await axios.post(
-        'http://localhost:3000/api/v1/auth/sign-in',
+        'https://trade-center.onrender.com/api/v1/auth/sign-in',
         {
           ...credentials,
         }

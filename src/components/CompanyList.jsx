@@ -47,7 +47,7 @@ const CompanyList = () => {
             <div className='absolute bottom-0 left-0 right-0 bg-blue-600 text-white py-2 text-center'>
               <button
                 onClick={() => {
-                  navigate('/');
+                  navigate(`/companies/${company.id}`);
                 }}
                 className='cursor-pointer focus:outline-none'
               >

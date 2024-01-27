@@ -1,29 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Container from '../components/Container';
 import PageLaout from '../components/PageLaout';
+import { useCompanies } from '../context/CompaniesCOnetext';
 
 const CompanyDetail = () => {
   //   const [showProducts, setShowProducts] = useState(false);
   const [quantities, setQuantities] = useState({});
   const { companyId } = useParams();
+  const { onSelectCompany, company } = useCompanies();
 
-  const companies = [
-    {
-      id: 1,
-      name: 'Company One',
-      location: 'City A, Country X',
-      industry: 'Technology',
-      description: 'A leading technology company in the field of...',
-    },
-    {
-      id: 2,
-      name: 'Company Two',
-      location: 'City B, Country Y',
-      industry: 'Finance',
-      description: 'A financial services company specializing in...',
-    },
-  ];
+  useEffect(() => {
+    onSelectCompany(companyId);
+  }, []);
 
   const products = [
     {
@@ -63,11 +52,7 @@ const CompanyDetail = () => {
     }));
   };
 
-  const selectedCompany = companies.find(
-    (company) => company.id === parseInt(companyId, 10)
-  );
-
-  if (!selectedCompany) {
+  if (!company) {
     return <div>Company not found</div>;
   }
 
@@ -76,23 +61,8 @@ const CompanyDetail = () => {
       <Container>
         <div className='container py-5 text-sm'>
           <h2 className='text-3xl font-bold text-blue-800 mb-6'>
-            {selectedCompany.name}
+            {company.name}
           </h2>
-          <div className='bg-white p-6 rounded-md shadow-md'>
-            <p className='text-gray-600 mb-2'>{selectedCompany.location}</p>
-            <p className='text-gray-600 mb-2'>
-              Industry:{' '}
-              <span className='bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded '>
-                {selectedCompany.industry}
-              </span>
-            </p>
-            <p className='text-gray-600 mb-4'>{selectedCompany.description}</p>
-            <button className='bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-700'>
-              Our Products
-            </button>
-          </div>
-
-          {/* Map */}
 
           <div className='container mx-auto mt-8'>
             <h2 className='text-3xl font-bold text-blue-800 mb-6'>
